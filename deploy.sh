@@ -9,13 +9,11 @@ echo 'iscxp.tk' > CNAME
 if [ -z "$ACCESS_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:xpnobug/vueblog.git
-  git config -g user.name "xpnobug"
-  git config -g user.email "669307582@qq.com"
 else
   msg='来自github action的自动部署'
   githubUrl=https://xpnobug:${ACCESS_TOKEN}@github.com/xpnobug/vueblog.git
-  git config -g user.name "xpnobug"
-  git config -g user.email "669307582@qq.com"
+  git config --global user.name "xpnobug"
+  git config --global user.email "669307582@qq.com"
 fi
 git init
 git add -A
