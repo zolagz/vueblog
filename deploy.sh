@@ -9,6 +9,8 @@ echo 'iscxp.tk' > CNAME
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:xpnobug/vueblog.git
+  git config user.name "xpnobug"
+  git config user.email "669307582@qq.com"
 else
   msg='来自github action的自动部署'
   githubUrl=https://xpnobug:${GITHUB_TOKEN}@github.com/xpnobug/vueblog.git
