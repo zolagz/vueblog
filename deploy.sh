@@ -6,14 +6,12 @@ cd docs/.vuepress/dist # 进入生成的文件夹
 
 # deploy to github
 echo 'iscxp.tk' > CNAME
-if [ -z "$GITHUB_TOKEN" ]; then
+if [ -z "$ACCESS_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:xpnobug/vueblog.git
-  git config user.name "xpnobug"
-  git config user.email "669307582@qq.com"
 else
   msg='来自github action的自动部署'
-  githubUrl=https://xpnobug:${GITHUB_TOKEN}@github.com/xpnobug/vueblog.git
+  githubUrl=https://xpnobug:${ACCESS_TOKEN}@github.com/xpnobug/vueblog.git
   git config user.name "xpnobug"
   git config user.email "669307582@qq.com"
 fi

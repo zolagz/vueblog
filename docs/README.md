@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: 'https://q1.qlogo.cn/g?b=qq&nk=2877406366&s=640'
+heroImage: '/Hfc.gif'
 heroText: VuePress
 tagline: Vue 驱动的静态网站生成器
 actionText: 快速上手 →
