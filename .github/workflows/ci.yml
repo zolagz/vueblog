@@ -1,27 +1,27 @@
-name: Deploy GitHub Pages
+name: CI
 
-# 触发条件：在 push 到 master 分支后
-on:
+# 在master分支发生push事件时触发。
+on: 
   push:
     branches:
       - master
+jobs: # 工作流
+  build:
+    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
 
-# 任务
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps: 
+      - name: Checkout # 步骤1
+        uses: actions/checkout@v1 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
+      - name: Use Node.js ${{ matrix.node-version }} # 步骤2
+        uses: actions/setup-node@v1 # 作用：安装nodejs
         with:
-          persist-credentials: false
-
-      - name: Build
-        run: npm install && npm run docs:build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKE }}
-          BRANCH: gh-pages
-          FOLDER: docs/.vuepress/dist
+          node-version: ${{ matrix.node-version }} # 版本
+      - name: run deploy.sh # 步骤3 （同时部署到github和coding）
+        env: # 设置环境变量
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKE }} # toKen私密变量
+        run: npm install && npm run deploy # 执行的命令  
+        # package.json 中添加 "deploy": "bash deploy.sh"
