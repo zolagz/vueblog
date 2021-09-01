@@ -9,8 +9,8 @@ echo 'iscxp.tk' > CNAME
 
   msg='来自github action的自动部署'
   githubUrl=https://xpnobug:${GITHUB_TOKEN}@github.com/xpnobug/vueblog.git
-  git config --global user.name "xpnobug"
-  git config --global user.email "669307582@qq.com"
+  git config user.name "xpnobug"
+  git config user.email "669307582@qq.com"
  
 git init
 git add -A
