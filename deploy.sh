@@ -8,7 +8,7 @@ cd docs/.vuepress/dist # 进入生成的文件夹
 echo 'iscxp.tk' > CNAME
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
-  githubUrl= github.com/xpnobug/vueblog.git
+  GITHUB_REPO: github.com/xpnobug/vueblog.git
   git config --global user.name "xpnobug"
   git config --global user.email "669307582@qq.com"
 else
@@ -20,7 +20,7 @@ fi
 git init
 git add -A
 git commit -m "${msg}"
-git push -f "https://${{ secrets.ACCESS_TOKEN }}@$githubUrl" master::gh-pages # 推送到github
+git push -f "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" master::gh-pages # 推送到github
 
 cd -
 rm -rf docs/.vuepress/dist
