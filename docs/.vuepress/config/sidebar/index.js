@@ -50,6 +50,8 @@ module.exports = {
             collapsable: false,//是否展开
             children: [
                 'git/Git',
+                'git/gitbranch',
+                'git/03git',
             ]
         },
 
