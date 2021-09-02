@@ -11,10 +11,10 @@ module.exports = [
                         text: 'vue2',
                         link: '/views/guide/introduction',
                     },
-                    /*{
-                        text: 'vue3',
-                        link: '/views/guide/introduction',
-                    }*/
+                    {
+                        text: 'Git操作命令表',
+                        link: '/github/git/Git',
+                    }
                 ],
 
             },

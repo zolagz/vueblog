@@ -44,6 +44,14 @@ module.exports = {
             ]
         },*/
     ],
+    '/github/': [
+        {
+            title: 'Git操作命令表',
+            collapsable: false,//是否展开
+            children: [
+                'git/Git',
+            ]
+        },
 
-
+    ],
 }
