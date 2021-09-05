@@ -14,6 +14,10 @@ module.exports = [
                     {
                         text: 'Git操作命令表',
                         link: '/github/git/Git',
+                    },
+                    {
+                        text: 'Apache ECharts',
+                        link: '/echarts/e/01',
                     }
                 ],
 

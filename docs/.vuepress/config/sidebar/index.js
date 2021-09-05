@@ -56,4 +56,16 @@ module.exports = {
         },
 
     ],
+    '/echarts/': [
+        {
+            title: 'Apache ECharts',
+            collapsable: false,//是否展开
+            children: [
+                'e/01',
+
+            ]
+        },
+
+    ],
+
 }
