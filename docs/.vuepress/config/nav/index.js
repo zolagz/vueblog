@@ -8,7 +8,7 @@ module.exports = [
                 text: '教程',
                 items: [
                     {
-                        text: 'vue2',
+                        text: 'vue3',
                         link: '/views/guide/introduction',
                     },
                     {

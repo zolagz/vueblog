@@ -22,10 +22,12 @@ module.exports = {
                 'guide/introduction',
             ]
         },{
-            title: '实例方法',
+            title: 'VUE3',
             collapsable: false,
             children: [
+                'guide/01p2p3',
                 'guide/watch',
+                'guide/02comAPI',
             ]
         },
        /* {
